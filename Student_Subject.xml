@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Student_Details total_students="2">
+	<Student Name="Hitarth">
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="33" Result="FAIL">CHEMISTRY</Subject>
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="89" Result="PASS">MATHEMATICS</Subject>
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="75" Result="PASS">BIOLOGY</Subject>
+	</Student>
+	<Student Name="Rohit">
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="45" Result="PASS">MATHEMATICS</Subject>
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="75" Result="PASS">BIOLOGY</Subject>
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="86" Result="PASS">PHYSICS</Subject>
+		<Subject Max_Marks="100" Min_Marks="35" Obtained="12" Result="FAIL">CHEMISTRY</Subject>
+	</Student>
+</Student_Details>
