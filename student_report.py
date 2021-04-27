@@ -25,7 +25,7 @@ class Html_Report_Generate():
         
         self.summary = add_tags('h1 style="font-size:30px;"', 'Report of students of Class 12')
         self.summary += add_tags('h3', 'Total Number of students: ' + str(self.root.attrib['total_students']))
-        self.summary += add_tags('h4', 'Time and date of test execution : ' + str(date.today().strftime("%B %d, %Y")) + "  , "      		+str(datetime.now().strftime("%H:%M:%S")))
+        self.summary += add_tags('h4', 'Time and date of test execution : ' + str(date.today().strftime("%B %d, %Y")) + "  , "+str(datetime.now().strftime("%H:%M:%S")))
         self.summary = add_tags('div style="background-color:white; border:1px; width:500px; display: inline-block;"',self.summary)
         self.summary += add_br_tag('br')
         
@@ -101,6 +101,7 @@ class Html_Report_Generate():
                 self.table_data += add_tags('td', str(self.c)) +add_tags('td',self.ele.attrib['Name'])+add_tags('td', str(self.subele.text)) + add_tags('td', str(self.subele.attrib['Max_Marks']))+ add_tags('td',str(self.subele.attrib['Min_Marks']))+add_tags('td', str(self.subele.attrib['Obtained']))+res_data 
                  
                 self.table_data = add_tags('tr', self.table_data)
+                
             self.table_head += self.table_data
          
         self.table_head = add_tags('table border=1 width=100% bgcolor=white id="myTable" ', self.table_head)
@@ -112,7 +113,7 @@ class Html_Report_Generate():
     def write_html(self, filename):
         with open(filename, "w+") as f:
             f.write(self.main_content)
-        logging.info(" HTML Report generated")
+        
 
 
 if __name__ == '__main__':
@@ -120,5 +121,5 @@ if __name__ == '__main__':
     html_file = Html_Report_Generate(xml_file)
     html_file.html_page()
     html_file.html_table()
-    html_filename = 'Student_Report.html'
+    html_filename = 'Report.html'
     html_file.write_html(html_filename)
