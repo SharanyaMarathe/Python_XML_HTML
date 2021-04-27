@@ -1,0 +1,33 @@
+<html width=100%><div style="background-color:white; border:1px; width:500px; display: inline-block;"><h1 style="font-size:30px;">Report of students of Class 12</h1 style="font-size:30px;"><h3>Total Number of students: 2</h3><h4>Time and date of test execution : April 26, 2021  , 14:09:57</h4></div style="background-color:white; border:1px; width:500px; display: inline-block;"><br><div style="background-color:white; border:1px; width:300px; display: inline-block; font-weight:bold;" id="List_check"><input type="checkbox" id="pass" value="Pass" onclick="sort_table()">Pass</input type="checkbox" id="pass" value="Pass" onclick="sort_table()"><input type="checkbox" id="fail" value="Fail" onclick="sort_table()">Fail</input type="checkbox" id="fail" value="Fail" onclick="sort_table()"><input type="checkbox" id="all" value="All" onclick="read_all()">All</input type="checkbox" id="all" value="All" onclick="read_all()"></div style="background-color:white; border:1px; width:300px; display: inline-block; font-weight:bold;" id="List_check"><br><br><br><script>function sort_table() {
+                  var input, filter, table, tr, td, j,i,ch, txtValue,ele;
+                  ele=document.getElementById("List_check")
+                  ch=ele.getElementsByTagName("input")
+                  for (j=0;j<ch.length;j++){
+                    if (ch[j].checked){
+                      filter =(ch[j].value.toUpperCase())}
+                
+                  }
+                  table = document.getElementById("myTable");
+                  tr = table.getElementsByTagName("tr");
+                  
+                  // Loop through all table rows, and hide those who don't match the search query
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[6];
+                    
+                    if (td) {
+                      txtValue = td.textContent || td.innerText;
+                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }
+                  }
+                }
+                function read_all(){
+                   location.reload()
+                   var  chk;
+                   chk = document.getElementById("all");
+                   chk.checked=True;
+                }
+                </script><table border=1 width=100% bgcolor=white id="myTable" ><tr style="font-weight:bold"><th>SL.NO</th><th>Student Name</th><th>Subject</th><th>Maximum Marks</th><th>Minimum Marks</th><th>Obtained Marks</th><th>Result</th></tr style="font-weight:bold"><tr><tr><tr><br><td>1</td><td>Hitarth</td><td>CHEMISTRY</td><td>100</td><td>35</td><td>33</td><td style="background-color:Salmon ;font-weight:bold">FAIL</td style="background-color:Salmon ;font-weight:bold"></tr><td>1</td><td>Hitarth</td><td>MATHEMATICS</td><td>100</td><td>35</td><td>89</td><td style="background-color:#393;font-weight:bold">PASS</td style="background-color:#393;font-weight:bold"></tr><td>1</td><td>Hitarth</td><td>BIOLOGY</td><td>100</td><td>35</td><td>75</td><td style="background-color:#393;font-weight:bold">PASS</td style="background-color:#393;font-weight:bold"></tr><tr><tr><tr><tr><br><td>2</td><td>Rohit</td><td>MATHEMATICS</td><td>100</td><td>35</td><td>45</td><td style="background-color:#393;font-weight:bold">PASS</td style="background-color:#393;font-weight:bold"></tr><td>2</td><td>Rohit</td><td>BIOLOGY</td><td>100</td><td>35</td><td>75</td><td style="background-color:#393;font-weight:bold">PASS</td style="background-color:#393;font-weight:bold"></tr><td>2</td><td>Rohit</td><td>PHYSICS</td><td>100</td><td>35</td><td>86</td><td style="background-color:#393;font-weight:bold">PASS</td style="background-color:#393;font-weight:bold"></tr><td>2</td><td>Rohit</td><td>CHEMISTRY</td><td>100</td><td>35</td><td>12</td><td style="background-color:Salmon ;font-weight:bold">FAIL</td style="background-color:Salmon ;font-weight:bold"></tr></table border=1 width=100% bgcolor=white id="myTable" ></html width=100%>
